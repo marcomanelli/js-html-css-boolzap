@@ -40,21 +40,96 @@ body {
   background-color: wheat;
 }
 
-/* HEADER LEFT */
-.container .left header.header-left {
+/* HEADER LEFT/RIGHT */
+.container .left header.header-left,
+.container .right header.header-right {
+  display: flex;
+  justify-content: space-between;
   height: 70px;
-  width: 100%;
-  background-color: cadetblue;
+  padding: 0 10px;
+  background-color: #EAEAEA;
 }
 
-.header-left .user-name{
+/* HEADER RIGHT */
+.container .right header.header-right {
+  border-left: 1px solid lightgray;
+}
+
+/* USER-NAME */
+.user-name{
+  display: flex;
+  align-items: center;
   height: 100%;
-  width: 100%;
 }
 
-.header-left .user-name img {
+.user-name img {
+  height: 80%;
+  border-radius: 100px;
+}
+
+.user-name h5 {
+  color: gray;
+}
+
+.user-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.user-buttons i {
+  margin-left: 10px;
+  font-size: large;
+  color:  #B1B1B1;
+}
+
+/* NOTIFICATION */
+.container .left .notification{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90px;
+  background-color: #8EDBFC;
+  font-size: 18px;
+}
+
+.container .left .notification i {
+  background-color: white;
+  color: #8EDBFC;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.container .left .notification a{
+  color: gray;
+}
+
+/* SEARCH */
+.search {
+  height: 40px;
+  background-color: #ececec;
+  padding: 5px;
+}
+
+.search .search-box {
   height: 30px;
-  width: 30px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.search .search-box i {
+  color: #B1B1B1;
+  margin: 0 30px;
+}
+
+.search .search-box input {
+  height: 30px;
+  width: 100%;
+  padding: 5px;
+  border: none;
 }
 
 /* CONTAINER RIGHT */
@@ -66,9 +141,18 @@ body {
 .container .right header,
 .container .right footer {
   height: 70px;
-  background-color: brown;
 }
 
 .container .right section {
   height: calc(100% - 140px);
+}
+
+/* FOOTER */
+.container .right footer {
+  background-color: #F3EEEA;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 30px;
+  color: #6B7376;
 }
