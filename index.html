@@ -28,6 +28,7 @@
       <!-- Left -->
       <div class="left">
 
+        <!-- Header left -->
         <header class="header-left">
           <div class="user-name">
             <img src="assets/img/avatar_io.jpg" alt="me">
@@ -62,12 +63,24 @@
         </section>
 
         <!-- Contacts -->
-        <section class="contacts"></section>
+        <section class="contacts-container">
+          <ul>
+            <li  
+              v-for="(contact, index) in contacts"
+            >
+            <!-- Correggere -->
+              <img src="assets/img/avatar{{contact.avatar}}.jpg" alt="">
+              
+              <h4>{{contact.name}}</h4>
+            </li>
+          </ul>
+        </section>
       </div>
       
       <!-- Right -->
       <div class="right">
 
+        <!-- Header right -->
         <header class="header-right">
           <div class="user-name">
             <img src="assets/img/avatar_1.jpg" alt="me">
@@ -85,7 +98,15 @@
           </div>
         </header>
 
-        <section></section>
+        <!-- Messages -->
+        <section>
+          <ul>
+            <!-- Correggere -->
+            <li v-for="(message, index) in messages">
+              {{}}
+            </li>
+          </ul>
+        </section>
 
         <!-- Footer -->
         <footer>
