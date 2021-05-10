@@ -3,6 +3,7 @@ const app = new Vue({
   el: "#app",
 
   data: {
+    pippo: dayjs().format('DD/MM/YYYY HH:mm:ss'),
     counter: 0,
     user: {
       name: 'Nome Utente',
@@ -95,5 +96,8 @@ const app = new Vue({
     ],
   },
 
-  methods: {},
+  methods: {
+    switchContact: function (index) {
+    }
+  }
 });

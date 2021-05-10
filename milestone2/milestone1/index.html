@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+
+    <!-- Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  <body>
+
+    <div id="app" class="container">
+
+      <!-- Left -->
+      <div class="left">
+
+        <!-- Header left -->
+        <header class="header-left">
+          <div class="user-name">
+            <img :src="'assets/img/avatar'+user.avatar+'.jpg'" :alt="user.name">
+            
+            <h4>{{ user.name }}</h4>
+          </div>
+
+          <div class="user-buttons">
+            <a href="#"><i class="fas fa-circle-notch"></i></a>
+            <a href="#"><i class="fas fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+        </header>
+
+        <!-- Notification --> 
+        <section class="notification">
+          <i class="fas fa-bell-slash"></i>
+          
+          <div class="notification-text">
+            <h4>Ricevi notifiche di nuovi messaggi</h4>
+            <a href="#">Attiva notifiche desktop</a>
+          </div>
+        </section>
+
+        <!-- Search -->
+        <section class="search">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+
+            <input type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+        </section>
+
+        <!-- Contacts -->
+        <section class="contacts-container">
+          <ul v-for="(contact, index) in contacts">
+            <li @click="counter=index">
+              <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" alt="">
+              
+              <h4>{{contact.name}}</h4>
+            </li>
+          </ul>
+        </section>
+      </div>
+      
+      <!-- Right -->
+      <div class="right">
+
+        <!-- Header right -->
+        <header class="header-right">
+          <div class="user-name" v-if="contacts.length">
+            <img :src="'assets/img/avatar'+ contacts[counter].avatar +'.jpg'" alt="">
+            
+            <div class="user-text">
+              <h4>{{contacts[counter].name}}</h4>
+              <h5>Ultimo accesso oggi alle</h5>
+            </div>
+          </div>
+
+          <div class="user-buttons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-paperclip"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+        </header>
+
+        <!-- Messages -->
+        <section class="messages">
+          <ul><!--  v-for="(contact, index) in contacts" -->
+            <li class="sent" ><!-- :class="messages.status==sent ? sent : received" --> <!-- v-for="(message, index) in messages" -->
+              <span><!-- {{message.text}} --></span><!-- {{contacts[counter].messages[index].text}} -->
+
+              <i class="fas fa-angle-down"></i>
+
+              <span class="time">{{pippo}}</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+          <a href="#"><i class="far fa-smile"></i></a>
+
+          <input type="text" placeholder="Scrivi un messaggio">
+
+          <a href="#"><i class="fas fa-microphone"></i></a>
+        </footer>
+
+      </div>
+
+    </div>
+
+    <!-- Dayjs -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

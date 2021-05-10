@@ -151,6 +151,15 @@ body {
   align-items: center;
   height: 70px;
   border-top: 1px solid lightgray;
+  transition: 0.1s;
+}
+
+.contacts-container ul li:hover {
+  background-color: lightgray;
+}
+
+.contacts-container ul li:active{
+  background-color: gray;
 }
 
 .contacts-container ul li img{
@@ -170,7 +179,7 @@ body {
 
 .container .right section {
   height: calc(100% - 140px);
-  background-image: url(/assets/img/mine.jpg);
+  background-image: url(../img/mine.jpg);
 }
 
 /* MESSAGES */
@@ -217,7 +226,7 @@ section.messages ul li .time {
   font-size: 12px;
   position: absolute;
   bottom: 4px;
-  right: 20px;
+  right: 10px;
 }
 
 /* FOOTER */
