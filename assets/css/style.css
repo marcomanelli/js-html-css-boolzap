@@ -137,6 +137,10 @@ body {
 }
 
 /* CONTACTS */
+/* correggere */
+.contacts-container {
+}
+
 .contacts-container ul {
   list-style: none;
 }
@@ -144,8 +148,13 @@ body {
 .contacts-container ul li {
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 70px;
   border-top: 1px solid lightgray;
+}
+
+.contacts-container ul li img{
+  height: 80%;
+  border-radius: 50%;
 }
 
 /* CONTAINER RIGHT */
@@ -176,6 +185,8 @@ section.messages ul li {
   border-radius: 10px;
   margin: 10px 50px;
   padding: 10px;
+  position: relative;
+  clear: both;
 }
 
 section.messages ul li.sent {
@@ -186,6 +197,25 @@ section.messages ul li.sent {
 section.messages ul li.received {
   background-color: white;
   float: left;
+}
+
+section.messages ul li i {
+  font-size: 20px;
+  margin: 0 5px;
+  color: transparent;
+  cursor: pointer;
+}
+
+section.messages ul li i:hover {
+  color: gray;
+}
+
+section.messages ul li .time {
+  color: gray;
+  font-size: 12px;
+  position: absolute;
+  bottom: 4px;
+  right: 20px;
 }
 
 /* FOOTER */
