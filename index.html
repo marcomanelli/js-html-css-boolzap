@@ -34,7 +34,7 @@
             <!-- Correggere -->
             <!-- <img :src="'assets/img/avatar'+user.avatar+'.jpg'" :alt="user.name"> -->
             
-            <!-- <h4>{{ user.name }}</h4> -->
+            <h4>{{ user.name }}</h4>
           </div>
 
           <div class="user-buttons">
@@ -65,14 +65,12 @@
 
         <!-- Contacts -->
         <section class="contacts-container">
-          <ul>
-            <li  
-              v-for="(contact, index) in contacts"
-            >
-            <!-- Correggere --><!-- 
-              <img src="'assets/img/avatar'+contact.avatar+'.jpg'" alt=""> -->
+          <ul v-for="contact in contacts">
+            <li>
+            <!-- Correggere -->
+              <img src="'assets/img/avatar'+contact.avatar+'.jpg'" alt="">
               
-              <!-- <h4>{{contact.name}}</h4> -->
+              <h4>{{contact.name}}</h4>
             </li>
           </ul>
         </section>
@@ -84,7 +82,7 @@
         <!-- Header right -->
         <header class="header-right">
           <div class="user-name">
-            <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt="">
+            <!-- <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt=""> -->
             
             <div class="user-text">
               <h4>Michele</h4>
@@ -100,10 +98,13 @@
         </header>
 
         <!-- Messages -->
-        <section>
+        <section class="messages">
           <ul>
             <!-- Aggiungere -->
-            <li>
+            <li class="sent">
+              <span>Hai portato a spasso il cane?</span>
+
+              <i class="fas fa-angle-down"></i>
             </li>
           </ul>
         </section>

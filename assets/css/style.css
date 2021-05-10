@@ -163,6 +163,31 @@ body {
   background-image: url(/assets/img/mine.jpg);
 }
 
+/* MESSAGES */
+section.messages ul {
+  list-style: none;
+  height: 100%;
+}
+
+section.messages ul li {
+  min-height: 50px;
+  min-width: 20px;
+  max-width: 250px;
+  border-radius: 10px;
+  margin: 10px 50px;
+  padding: 10px;
+}
+
+section.messages ul li.sent {
+  background-color: #D5F9BB;
+  float: right;
+}
+
+section.messages ul li.received {
+  background-color: white;
+  float: left;
+}
+
 /* FOOTER */
 .container .right footer {
   background-color: #f3eeea;
