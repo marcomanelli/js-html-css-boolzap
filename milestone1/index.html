@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Boolzapp</title>
 
     <!-- Links -->
     <link
@@ -79,11 +79,11 @@
 
         <!-- Header right -->
         <header class="header-right">
-          <div class="user-name">
-            <!-- <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt=""> -->
+          <div class="user-name" v-if="contacts.length">
+            <img :src="'assets/img/avatar'+ contacts[counter].avatar +'.jpg'" alt="">
             
             <div class="user-text">
-              <h4>Michele</h4>
+              <h4>{{contacts[counter].name}}</h4>
               <h5>Ultimo accesso oggi alle</h5>
             </div>
           </div>
