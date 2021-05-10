@@ -31,9 +31,10 @@
         <!-- Header left -->
         <header class="header-left">
           <div class="user-name">
-            <img src="assets/img/avatar_io.jpg" alt="me">
+            <!-- Correggere -->
+            <!-- <img :src="'assets/img/avatar'+user.avatar+'.jpg'" :alt="user.name"> -->
             
-            <h4>Nome Utente</h4>
+            <!-- <h4>{{ user.name }}</h4> -->
           </div>
 
           <div class="user-buttons">
@@ -43,7 +44,7 @@
           </div>
         </header>
 
-        <!-- Notification -->
+        <!-- Notification --> 
         <section class="notification">
           <i class="fas fa-bell-slash"></i>
           
@@ -68,10 +69,10 @@
             <li  
               v-for="(contact, index) in contacts"
             >
-            <!-- Correggere -->
-              <img src="assets/img/avatar{{contact.avatar}}.jpg" alt="">
+            <!-- Correggere --><!-- 
+              <img src="assets/img/avatar{{contact.avatar}}.jpg" alt=""> -->
               
-              <h4>{{contact.name}}</h4>
+              <!-- <h4>{{contact.name}}</h4> -->
             </li>
           </ul>
         </section>
@@ -83,7 +84,7 @@
         <!-- Header right -->
         <header class="header-right">
           <div class="user-name">
-            <img src="assets/img/avatar_1.jpg" alt="me">
+            <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt="">
             
             <div class="user-text">
               <h4>Michele</h4>
@@ -101,9 +102,8 @@
         <!-- Messages -->
         <section>
           <ul>
-            <!-- Correggere -->
-            <li v-for="(message, index) in messages">
-              {{}}
+            <!-- Aggiungere -->
+            <li>
             </li>
           </ul>
         </section>
