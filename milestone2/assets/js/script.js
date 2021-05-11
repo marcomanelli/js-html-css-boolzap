@@ -96,7 +96,6 @@ const app = new Vue({
   },
 
   methods: {
-    switchContact: function (index) {
-    }
+    
   }
 });

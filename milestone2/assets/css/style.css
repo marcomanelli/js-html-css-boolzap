@@ -167,6 +167,10 @@ body {
   border-radius: 50%;
 }
 
+.contacts-container .contact.active {
+  background-color: lightgray;
+}
+
 /* CONTAINER RIGHT */
 .container .right {
   width: 65%;
@@ -191,7 +195,7 @@ section.messages ul {
 
 section.messages ul li {
   min-height: 50px;
-  min-width: 20px;
+  min-width: 200px;
   max-width: 250px;
   border-radius: 10px;
   margin: 10px 50px;

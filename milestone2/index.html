@@ -65,7 +65,10 @@
         <!-- Contacts -->
         <section class="contacts-container">
           <ul v-for="(contact, index) in contacts">
-            <li @click="counter=index">
+            <li class="contact"
+            :class="counter == index ? 'active' : null"
+            @click="counter=index"
+            >
               <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" alt="">
               
               <h4>{{contact.name}}</h4>
@@ -97,13 +100,15 @@
 
         <!-- Messages -->
         <section class="messages">
-          <ul><!--  v-for="(contact, index) in contacts" -->
-            <li class="sent" ><!-- :class="messages.status==sent ? sent : received" --> <!-- v-for="(message, index) in messages" -->
-              <span><!-- {{message.text}} --></span><!-- {{contacts[counter].messages[index].text}} -->
+          <ul>
+            <li class="message sent"
+            v-for="message in contacts[counter].messages"
+            :class="message.status">
+              <span>{{message.text}}</span>
 
               <i class="fas fa-angle-down"></i>
 
-              <span class="time">{{pippo}}</span>
+              <span class="time">{{message.date}}</span>
             </li>
           </ul>
         </section>
