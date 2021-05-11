@@ -4,6 +4,7 @@ const app = new Vue({
   data: {
     pippo: dayjs().format('DD/MM/YYYY HH:mm:ss'),
     counter: 0,
+    newMessage: '',
     user: {
       name: 'Nome Utente',
       avatar: '_io'
@@ -97,7 +98,12 @@ const app = new Vue({
 
   methods: {
     addMessage: function(message) {
-      messages[counter].push(message)
+      /* contact not defined? */
+      contacts[counter].messages.push(`{
+        date: "DATA",
+        text: "${message}",
+        status: "sent",
+      }`)
     }
   }
 });
