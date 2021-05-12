@@ -70,6 +70,7 @@
             <li class="contact"
             :class="counter == index ? 'active' : null"
             @click="counter=index"
+            v-for="search in searchName"
             >
               <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" alt="">
               
