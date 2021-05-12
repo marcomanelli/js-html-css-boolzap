@@ -214,7 +214,6 @@ section.messages ul li {
   padding: 10px;
   position: relative;
   clear: both;
-  word-break: break-all;
 }
 
 section.messages ul li.sent {
