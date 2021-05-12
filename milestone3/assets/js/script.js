@@ -2,9 +2,10 @@ const app = new Vue({
   el: "#app",
 
   data: {
-    pippo: dayjs().format('DD/MM/YYYY HH:mm:ss'),
     counter: 0,
     newMessage: '',
+    search: '',
+    risposte:['█▀▀▄░░░░░░░░░░░▄▀▀█░ █░░░▀▄░▄▄▄▄▄░▄▀░░░█    ░░▀▄░░░▀░░░░░▀░░░▄▀    ░░░░▌░▄▄░░░▄▄░▐▀▀    ░░░▐░░█▄░░░▄█░░▌▄▄▀▀▀▀█    ░░░▌▄▄▀▀░▄░▀▀▄▄▐░░░░░░█    ▄▀▀▐▀▀░▄▄▄▄▄░▀▀▌▄▄▄░░░█    █░░░▀▄░█░░░█░▄▀░░░░█▀▀▀    ░▀▄░░▀░░▀▀▀░░▀░░░▄█▀    ░░░█░░░░░░░░░░░▄▀▄░▀▄    ░░░█░░░░░░░░░▄▀█░░█░░█    ░░░█░░░░░░░░░░░█▄█░░▄▀    ░░░█░░░░░░░░░░░████▀    ░░░▀▄▄▀▀▄▄▀▀▄▄▄█▀', '( ͡° ͜ʖ ͡°)', ':P', ':3'],
     user: {
       name: 'Nome Utente',
       avatar: '_io'
@@ -97,13 +98,44 @@ const app = new Vue({
   },
 
   methods: {
-    addMessage: function(message) {
-      /* contact not defined? */
-      contacts[counter].messages.push(`{
-        date: "DATA",
-        text: "${message}",
-        status: "sent",
-      }`)
+    addMessage(){
+      if(this.newMessage.length > 0){
+        this.pushMessage(this.newMessage, 'sent')
+        this.newMessage = ''
+
+        setTimeout(()=>{
+          let risp = this.risposte[Math.floor(Math.random() * this.risposte.length)]
+          this.pushMessage(risp, 'received')
+        },1000)
+      }
+    },
+
+    pushMessage(text, status){
+      this.contacts[this.counter].messages.push({
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        text: text,
+        status: status,
+      })
+    },
+
+    lastAccess(index){
+      let contactMessages = this.contacts[index].messages
+      return contactMessages[contactMessages.length-1].date
+    },
+
+    lastMessage(index){
+      let contactMessages = this.contacts[index].messages
+      if(contactMessages[contactMessages.length-1].text.length > 30){
+        let spliceMessage = contactMessages[contactMessages.length-1].text.slice(0, 30) + "..."
+        return spliceMessage
+      }
+      return contactMessages[contactMessages.length-1].text
+    },
+
+    searchName(){
+      return this.contacts.filter(search => {
+        return search.name.toLowerCase().includes(this.search.toLowerCase())
+      })
     }
-  }
+  },
 });

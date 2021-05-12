@@ -58,7 +58,9 @@
           <div class="search-box">
             <i class="fas fa-search"></i>
 
-            <input type="text" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" placeholder="Cerca o inizia una nuova chat"
+            v-model="search"
+            @keydown="searchName">
           </div>
         </section>
 
@@ -71,7 +73,12 @@
             >
               <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" alt="">
               
-              <h4>{{contact.name}}</h4>
+              <div class="contact-column">
+                <h4 class="contact-name">{{ contact.name }}</h4>
+
+                <small class="last-message">{{ lastMessage(index) }}</small>
+              </div>
+              <small class="contact-time">{{ lastAccess(index) }}</small>
             </li>
           </ul>
         </section>
@@ -87,7 +94,7 @@
             
             <div class="user-text">
               <h4>{{contacts[counter].name}}</h4>
-              <h5>Ultimo accesso oggi alle</h5>
+              <h5>Ultimo accesso oggi alle: {{ lastAccess(counter) }}</h5>
             </div>
           </div>
 
@@ -119,8 +126,8 @@
 
           <input type="text" 
           placeholder="Scrivi un messaggio" 
-          v-model="newMessage"
-          @keyup.enter="addMessage(newMessage)">
+          v-model.trim="newMessage"
+          @keyup.enter="addMessage">
 
           <a href="#"><i class="fas fa-microphone"></i></a>
         </footer>

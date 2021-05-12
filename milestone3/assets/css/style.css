@@ -152,6 +152,7 @@ body {
   height: 70px;
   border-top: 1px solid lightgray;
   transition: 0.1s;
+  position: relative;
 }
 
 .contacts-container ul li:hover {
@@ -165,10 +166,17 @@ body {
 .contacts-container ul li img{
   height: 80%;
   border-radius: 50%;
+  margin:0 10px;
 }
 
 .contacts-container .contact.active {
-  background-color: lightgray;
+  background-color: rgb(170, 170, 170);
+}
+
+.contact-time {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 /* CONTAINER RIGHT */
@@ -195,13 +203,14 @@ section.messages ul {
 
 section.messages ul li {
   min-height: 50px;
-  min-width: 200px;
+  min-width: 300px;
   max-width: 250px;
   border-radius: 10px;
   margin: 10px 50px;
   padding: 10px;
   position: relative;
   clear: both;
+  word-break: break-all;
 }
 
 section.messages ul li.sent {
